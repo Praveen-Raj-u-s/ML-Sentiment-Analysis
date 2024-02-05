@@ -1,5 +1,5 @@
 Natural Language Processing - Sentiment Analysis
-Team: Priyanka Agarwal (CIS 5190), Karleena Rybacki (CIS 5190), Praveen Raj Uma Maheswari Shyam Sundar (CIS 5190). Project Mentor TA: Yiming Huang
+Team: Priyanka Agarwal (CIS 5190), Karleena Rybacki (CIS 5190), Praveen Raj Uma Maheswari Shyam Sundar (CIS 5190). 
 
 
 
