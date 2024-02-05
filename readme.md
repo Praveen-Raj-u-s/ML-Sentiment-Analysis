@@ -3,11 +3,13 @@ Team: Priyanka Agarwal (CIS 5190), Karleena Rybacki (CIS 5190), Praveen Raj Uma 
 
 
 
-1) Abstract
+1) Abstract:
+   
 In this project, we implemented different neural network architectures to classify the Amazon Fine Food Reviews as either positive, negative, or neutral. The Amazon Fine Food Review Kaggle dataset, was evaluated on various machine learning model architectures, including Convolutional Neural Networks (CNNs) and Long Short-Term Memory networks (LSTMs) with GloVe embeddings were implemented. We analyzed the impact of hyperparameters such as the learning rate, number of layers/hidden layers, and batch size on the performance of the models, where the evaluation metrics used were accuracy, precision, recall, and F1 score. The study achieved an overall 91% accuracy rate on the held-out test dataset using a CNN and 85% using the LSTM. These results highlight the effectiveness of using neural network models in sentiment analysis, which is able to provide insights into hyperparameter selection on model performance.
 
 
-2) Introduction
+2) Introduction:
+   
 In this project, we aimed to implement different supervised learning algorithms to help more accurately categorize the Amazon Fine Food reviews as either positive, negative or neutral. This approach to sentiment analysis can help customers in purchasing the right product, as well as businesses better understand customer feedback to improve their products accordingly. The Amazon Fine Food Review Kaggle dataset will be used for training and testing the machine learning model in this sentiment analysis project. The dataset spans over 10 years and contains approximately 500,000 reviews, each including product and user information, ratings, and a plain text review [McAuley, 2013]. The inputs to the model consist of the text and rating from each reviewer, and the output will be the overall sentiment of the review, categorized as either positive, negative, or neutral. The dataset will be divided into training, testing, and validation sets to assess the model's performance and its ability to generalize to new, unseen reviews.
 We first implemented varying Convolutional Neural Networks (CNNs) using the Keras deep learning library for text classification of the Amazon reviews. In order to evaluate the effect of varying the parameters of the CNN, we used different learning rates, number of epochs, batch sizes, kernel sizes, and the activation functions. Specifically, we fine-tuned the learning rate, ranging from 0.001 to 0.1, adjusted the number of epochs between 5 and 10, experimented with kernel sizes of 3, 6, and 10, and included different activation functions such as ReLU, Sigmoid, and Softmax. We first implemented an LSTM model for sentiment analysis from scratch and then utilized a pre-trained model using GloVe embeddings from “Sentiment Analysis — using LSTM & GloVe Embeddings” (2022). Similarly, we varied different parameters of the LSTM model, including the batch sizes and activation functions. By varying these parameters, we aimed to evaluate the impact on the performance of the models and determine the most effective configuration of the CNN and LSTM models towards achieving high accuracy in sentiment analysis.
 
@@ -15,21 +17,24 @@ In our study, we employed various evaluation metrics to assess the performance o
 
 
 
-3) How We Have Addressed Feedback From the Proposal Evaluations
+3) How We Have Addressed Feedback From the Proposal Evaluations:
+   
 Based on the initial feedback we received from the proposal, we first started to explore alternative approaches to minimize the overall computational cost. Given the size of the dataset, we focused our efforts on smaller-scale networks architectures that could be trained with a smaller subset of the training dataset (80% of the data). We also considered adjusting feature engineering by selecting the most appropriate/relevant features that would improve the model’s accuracy in line with recent literature in sentiment analysis. We also took into consideration the feedback received from Milestone #2 to include additional results and details about the manually tuned parameters. We realized that the dataset may not have an equal distribution of positive, negative, and neutral reviews, which could lead to a more biased model. To address this concern, we explored techniques such as oversampling or undersampling to balance the distribution of the labels. Additionally, we used evaluation metrics such as precision, recall, and F1 score, to better assess the performance of the model. 
 
 
 
-4) Background
+4) Background:
+   
 Amazon sentiment analysis involves analyzing product reviews towards the goal of determining if the overall sentiment if the review is positive, negative, or neutral. One of the main shortcomings of sentiment analysis is the difficulty of accurately interpreting the human language, which can lead to incorrect classification. The first paper outlines these issues by implementing different convolutional neural networks (CNNs), long short-term memory (LSTM), and BERT word embedding techniques in conjunction with the models [Balakrishnan, 2022]. The second paper presents a deep learning approach for sentiment analysis using the Amazon reviews dataset, specifically using convolutional neural networks (CNNs) and recurrent neural networks (RNNs) [Shrestha, 2019]. 
 
 
-5) Summary of Our Contributions
+5) Summary of Our Contributions:
+   
 Implementation contribution(s): Our implementation involved building and training varying CNN models on smaller subsets of the Amazon product reviews datasets to account for potential computational complexities. We experimented with different architectures and hyperparameters including the learning rate, number of epochs, batch size, kernel size, and the activation function for CNNs and varied the batch sizes and activation functions. For the LSTMs, we varied the batch sizes and the activation functions to evaluate the effect of these parameters and increase the accuracy of the model. 
 Evaluation contributions: We evaluated the models using accuracy, precision, recall, and the F1 score, while also spending time to identify appropriate subsets of the dataset to explore datashifts. We then analyzed the effect of fine-tuning hyperparameters such as learning rate and number of layers/hidden layers to assess model generalizability. We also varied the product types to help evaluate the overall model performance by conducting an analysis of hyperparameters, including learning rate, number of hidden layers, and batch size.
 
 
-6) Detailed Description of Contributions
+6) Detailed Description of Contributions:
 
 6.1 Implementation Contributions
 Our contributions were based on Option 1, where we aimed to implement and compare the results of multiple machine learning approaches to sentiment analysis. For Milestone #2, we first compared different approaches including, Logistic Regression and Support Vector Machines, while tuning hyperparameters. For Milestone #3, we implemented various CNN architectures with different hyperparameters such as activation function, learning rate, batch size, and kernel size. In addition, we implemented custom and pre-trained LSTMs to evaluate their effectiveness in sentiment analysis.
@@ -54,12 +59,15 @@ Our experiments are designed to answer the following key questions: How do diffe
 We used the Amazon Review data set for our experiments, which contains a total of 500K reviews. We preprocessed the data by converting all the text to lowercase and removing punctuation, stop words, and digits. We used an 80/20 split for training and testing, respectively. We evaluated the performance of our models using accuracy, precision, recall, and F1 score. Table 1 & Table 2 in the supplementary materials section provide a detailed summary of the varying hyperparameters used in our CNN and LSTM models, respectively, and their corresponding evaluation metrics. We considered distribution and dataset shifts by randomly splitting our dataset into training and testing sets to ensure that our models can generalize well to unseen data. Given the abundance of data available, the choice of models was not significantly constrained. However, the nature of the problem and the existing literature influenced the selection of models. Our experiments began with two models, Logistic Regression and Support Vector Machine (SVM). Generally, Logistic regression would be a good choice for small to medium-sized datasets and SVMs would be a good choice for datasets with high dimensionality and non-linear separability. For our case, both the algorithms have performed almost similarly with an accuracy of nearly 85%. For the bulk of this project we wanted to follow current literature and build from that, specifically comparing CNNs and LSTMs in sentiment analysis. From our project we saw that each architecture has its own strengths and weaknesses, where CNNs excel in local feature extraction, while LSTMs are better at processing sequential information. Despite this, our results indicated that CNNs had slightly higher accuracy scores than LSTMs while LSTMs had shorter training times overall. 
 
 
-7) Compute/Other Resources Used
+7) Compute/Other Resources Used:
+   
 Initially, we ran the CNN algorithm with Google CoLab with GPU runtime. The overall runtime for training began to take longer than expected after varying CNN parameters, which led us to use Amazon Web Services (AWS) for some and the Children’s Hospital of Philadelphia (CHOP) computing server to decrease the training runtime. This was particularly helpful as a decrease in runtime was observed, especially since LSTMs were more computationally intensive compared to CNNs. 
 
 
-8) Conclusions
+8) Conclusions:
+   
 To conclude, we successfully carried out Sentiment Analysis on the Amazon Fine Food Reviews dataset and implemented different model architectures that can classify the review sentiments as either positive, negative, or neutral. We tried multiple models including Logistic Regression, SVMs, and bigger neural network models like CNNs and also LSTMs. Table 1 & Table 2 in the supplementary materials section provide a detailed summary of the varying hyperparameters used in our CNN and LSTM models for sentiment analysis. We systematically compared different models with different combinations of hyperparameters such as learning rate, number of epochs, batch size, kernel size and activation function. The table shows the effect of varying these parameters on model accuracy, precision, recall, and F1 score. From our experiment we saw that the varying CNN models had higher accuracies while the LSTM models were suboptimal at best. We initially planned to incorporate BERT word embedding techniques [Shrestha, 2019], however, we faced difficulties in the implementation process. Throughout the duration of this project, the support from instructors and TAs in terms of sharing feedback and clearing our doubts was really helpful for us to implement our project.
 Ethical Considerations, and Broader Social and Environmental Impact: 
+
 This project displayed the potential that the different machine learning models and network architectures can assist both consumers and businesses using Amazon reviews as a basis of their shopping experience. Accurately classifying reviews will have applications in filtering products by their true review ratings to help customers make more informed decisions and avoid products with misleading reviews. However, it is important to note that inaccurate classification could mislead customers and be unfair to sellers and reviewers, highlighting the importance of thorough testing and evaluation of these models. By providing more accurate sentiment analysis, the model could also help to address issues related to bias and discrimination in machine learning. Another aspect to keep in mind is the overall scalability of the model to process every review for every product already in Amazon currently, and additional products that are to come. As the number of reviews are continuously increasing, the ability to generate sentiment analysis for every product becomes a challenging dimensionality task. Additional computing power would be necessary or to implement parallel processing techniques. Overall, this project underscores the potential of machine learning in improving the online shopping experience and facilitating better decision-making for both consumers and businesses.
 
